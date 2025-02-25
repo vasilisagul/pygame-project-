@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b89cf532-8505-4b41-9b0d-35575b45122e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ к ср/.idea/ к ср.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Git и случайные окружности/.idea/Git и случайные окружности.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Git и случайные окружности/Git и случайные окружности.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Numpy/.idea/Numpy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project/.idea/Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 1. Введение/.idea/PyGame 1. Введение.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 1. Введение/Мишень.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 1. Введение/Прямоугольник.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 1. Введение/Шахматная клетка.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 1. Введение/крест.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 3. Клетчатое поле/.idea/PyGame 3. Клетчатое поле.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 4. Классические игры на клетчатом поле/.idea/PyGame 4. Классические игры на клетчатом поле.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 6. Взаимодействия/.idea/PyGame 6. Взаимодействия.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 6. Взаимодействия/data/bomb2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 6. Взаимодействия/data/boom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 6. Взаимодействия/Пересечение кругов «вручную».py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 6. Взаимодействия/Пересечение прямоугольников «вручную».py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 7. Игра в целом/.idea/PyGame 7. Игра в целом.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 7. Игра в целом/data/free_zone.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 7. Игра в целом/data/map.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 7. Игра в целом/Перемещение героя. Доп. уровни.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 7. Игра в целом/Перемещение героя. Камера.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 7. Игра в целом/Перемещение героя.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 8. Украшения игры/.idea/PyGame 8. Украшения игры.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 8. Украшения игры/123.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PyGame 8. Украшения игры/456.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QT 2/.idea/QT 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QT 3/.idea/QT 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QT 4. Файлы в Python/.idea/QT 4. Файлы в Python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QT 5 Диалоги/.idea/QT 5 Диалоги.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QT 9 Standalone/.idea/QT 9 Standalone.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QT CSV/.idea/QT CSV.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QT SQL 2/.idea/QT SQL 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QT SQT 1/.idea/QT SQL 1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QT знакомство/.idea/QT знакомство.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Библиотека argparse/.idea/WEB. Библиотека argparse.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Библиотека argparse/123.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Библиотека argparse/Предсказатель пола.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Библиотека argparse/Создание и использование модулей.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Библиотека argparse/Суперпарсер аргументов.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/.idea/WEB. Введение во flask.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/123.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/static/img/mars_1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/static/img/riana.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/Колонизация Марса.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Введение во flask/Рекламная кампания.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Знакомство с API/.idea/WEB. Знакомство с API.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Знакомство с API/123.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Знакомство с API/123.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Знакомство с API/lip.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Знакомство с API/Австралия.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Знакомство с API/Исторический музей.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Знакомство с API/Округа.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Знакомство с API/очтовый индекс.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Знакомство с API/ывапро.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с командной строкой/.idea/WEB. Работа с командной строкой.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с командной строкой/Bash-разминка.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с командной строкой/Калькулятор 1.0.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с командной строкой/Калькулятор 2.0.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с командной строкой/Часы с кукушкой.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с протоколом HTTP/.idea/WEB. Работа с протоколом HTTP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с протоколом HTTP/lib/geocoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с протоколом HTTP/lib/mapapi_PG.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с протоколом HTTP/Поиск аптеки 2.0.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с протоколом HTTP/Полный поиск.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с файловой системой/.idea/WEB. Работа с файловой системой.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с файловой системой/123.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с файловой системой/scoring.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с файловой системой/Размер всех файлов.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с файловой системой/Результат тестирования.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с файловой системой/Структура архива.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Работа с файловой системой/ЧЧФ.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Решение задач на API Яндекс.Карт/.idea/WEB. Решение задач на API Яндекс.Карт.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Решение задач на API Яндекс.Карт/main [qDZEsN].py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Решение задач на API Яндекс.Карт/main_window.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Решение задач на API Яндекс.Карт/Большая задача по Maps API. Часть №1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Решение задач на API Яндекс.Карт/Большая задача по Maps API. Часть №2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Решение задач на API Яндекс.Карт/Большая задача по Maps API. Часть №3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB. Решение задач на API Яндекс.Карт/Большая задача по Maps API. Часть №4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../functions/.idea/functions.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../git_and_random_circles Public/.idea/git_and_random_circles Public.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../git_project1/.idea/git_project1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pythonProject/.idea/pythonProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../split и join/.idea/split и join.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tkinter/.idea/tkinter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ООП наследование №1/.idea/ООП наследование №1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ООП полиморфизм/.idea/ООП полиморфизм.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ООП №3/.idea/ООП №3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ООП. наследование №2/.idea/ООП. наследование №2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ООП/.idea/введение ООП.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Повторение 2/.idea/Повторение 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Повторение 3/.idea/Повторение 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../СР 3/.idea/СР 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Функции 2/.idea/Функции 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../библиотека №2/.idea/библиотека №2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../библиотека №4/.idea/библиотека №4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../библиотека №5/.idea/библиотека №5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../библиотекаи №3/.idea/библиотекаи №3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../библиотеки №1/.idea/библиотеки №1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../вапир/.idea/вапир.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../классы 1/.idea/классы 1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../колекции/.idea/колекции.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../кр/.idea/кр.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../кр2/.idea/кр2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../лямбда-функция/.idea/лямбда-функция.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../методы списков и строк/.idea/методы списков и строк.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../множества/.idea/множества.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../множетсва/.idea/множетсва.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../повторение 1/.idea/повторение 1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../словари/.idea/словари.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ср 2/.idea/ср 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../стратегия/.idea/стратегия.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../функции 3/.idea/функции 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../функции 4/.idea/функции 4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../функции 5/.idea/функции 5.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2tXCvMz2raJZFeZ9tx0bDD1dZuN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.Колонизация Марса.executor": "Run",
+    "Python.Рекламная кампания.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/projects/WEB. Введение во flask/static/img",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\WEB. Введение во flask\static\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\WEB. Введение во flask\static\img" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b89cf532-8505-4b41-9b0d-35575b45122e" name="Changes" comment="" />
+      <created>1740489261432</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740489261432</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
