@@ -4,7 +4,7 @@ import sys
 
 import pygame
 
-FPS = 50
+FPS = 70
 WIDTH = 640
 HEIGHT = 480
 START_POSITION = WIDTH // 2, HEIGHT - 20
