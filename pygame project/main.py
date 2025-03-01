@@ -36,13 +36,6 @@ class Sprite(pygame.sprite.Sprite):
         pass
 
 
-# class Border(Sprite):
-#     def __init__(self, pos_x, pos_y):
-#         super().__init__(border_group)
-#         self.image = border_image
-#         self.rect = self.image.get_rect().move(pos_x, pos_y)
-#         # self.pos = [pos_x, pos_y]
-
 class Border(Sprite):
     # строго вертикальный или строго горизонтальный отрезок
     def __init__(self, x1, y1, x2, y2):
@@ -93,11 +86,11 @@ class Ball(pygame.sprite.Sprite):
 
     def update(self):
         self.rect = self.rect.move(self.vx, self.vy)
-        if pygame.sprite.spritecollideany(self, horizontal_borders):
+        if (pygame.sprite.spritecollideany(self, horizontal_borders) or
+                pygame.sprite.spritecollideany(self, board_group)):
             self.vy = -self.vy
         if pygame.sprite.spritecollideany(self, vertical_borders):
             self.vx = -self.vx
-        print(self.vy, self.vy)
 
 
 def load_image(name, color_key=None):
@@ -147,19 +140,13 @@ Border(5, 5, 5, HEIGHT - 5)
 Border(WIDTH - 5, 5, WIDTH - 5, HEIGHT - 5)
 
 
-# Border(0, 0, WIDTH - 1, 0)  # верхняя
-# Border(0, 0,0, HEIGHT - 1)  # левая
-# Border(WIDTH - 1, 0, WIDTH - 1, HEIGHT - 1)  # правая
-# Border(0, HEIGHT - 1, WIDTH - 1, HEIGHT - 1)  # нажняя
-
-
 def terminate():
     pygame.quit()
     sys.exit()
 
 
 def start_screen():
-    intro_text = ["ARKANOID" ]
+    intro_text = ["ARKANOID"]
     # arkanoid", "",
     #               "Правила игры",
     #               "Если в правилах несколько строк,",
@@ -191,15 +178,10 @@ def start_screen():
 
 if __name__ == '__main__':
     start_screen()
-    # main()
-    # pygame.init()
-    # w, h = 600, 300
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption('Игра')
-    # clock = pygame.time.Clock()
-    # all_sprites = pygame.sprite.Group(Car('img.png', w))
-    # level_map = load_level("map.map")
-    screen.fill((255, 255, 255))
+
+    screen.fill((0, 0, 0))
     all_sprites.update()
     running = True
     ball_true = False
@@ -217,11 +199,8 @@ if __name__ == '__main__':
             if board.rect.x - OFFSET >= 0:
                 board.rect.x -= OFFSET
 
-        screen.fill((255, 255, 255))
+        screen.fill((0, 0, 0))
 
-        # all_sprites.update()
-        # all_sprites.draw(screen)
-        # all_sprites.update()
         border_group.draw(screen)
         board_group.draw(screen)
         ball_group.draw(screen)
