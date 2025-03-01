@@ -191,6 +191,20 @@ def end_screen():
         clock.tick(FPS)
     self.terminate()
 
+def win_screen():
+    fon = pygame.transform.scale(load_image('win.png'), (WIDTH, HEIGHT))
+    screen.blit(fon, (0, 0))
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                terminate()
+            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+                return  # начинаем игру
+        pygame.display.flip()
+        clock.tick(FPS)
+    self.terminate()
+
+
 
 if __name__ == '__main__':
     start_screen()
@@ -229,6 +243,8 @@ if __name__ == '__main__':
         if not tiles_group:
             ball_group.empty()
             cnt_level += 1
+            if cnt_level == 4:
+                win_screen()
             level_map = load_level(LEVELS[cnt_level])
             generate_level(level_map)
             ball_true = False
