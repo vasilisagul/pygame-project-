@@ -4,7 +4,7 @@ import sys
 
 import pygame
 
-FPS = 50
+FPS = 60
 WIDTH = 640
 HEIGHT = 480
 START_POSITION = WIDTH // 2, HEIGHT - 50
@@ -86,9 +86,13 @@ class Ball(pygame.sprite.Sprite):
 
     def update(self):
         self.rect = self.rect.move(self.vx, self.vy)
-        if (pygame.sprite.spritecollideany(self, horizontal_borders) or
-                pygame.sprite.spritecollideany(self, board_group)):
+        if pygame.sprite.spritecollideany(self, board_group):
             self.vy = -self.vy
+        if pygame.sprite.spritecollideany(self, horizontal_borders):
+            if self.vy >= 0:
+                end_screen()
+            else:
+                self.vy = -self.vy
         if pygame.sprite.spritecollideany(self, vertical_borders):
             self.vx = -self.vx
 
@@ -147,10 +151,6 @@ def terminate():
 
 def start_screen():
     intro_text = ["ARKANOID"]
-    # arkanoid", "",
-    #               "Правила игры",
-    #               "Если в правилах несколько строк,",
-    #               "приходится выводить их построчно"]
 
     fon = pygame.transform.scale(load_image('fon.png'), (WIDTH, HEIGHT))
     screen.blit(fon, (0, 0))
@@ -164,6 +164,33 @@ def start_screen():
         intro_rect.x = 130
         text_coord += intro_rect.height
         screen.blit(string_rendered, intro_rect)
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                terminate()
+            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+                return  # начинаем игру
+        pygame.display.flip()
+        clock.tick(FPS)
+    self.terminate()
+
+
+def end_screen():
+    intro_text = ["Game Over"]
+
+    fon = pygame.transform.scale(load_image('end_fon.jpg'), (WIDTH, HEIGHT))
+    screen.blit(fon, (0, 0))
+    # font = pygame.font.Font(None, 30)
+    # text_coord = 50
+    # for line in intro_text:
+    #     string_rendered = font.render(line, 1, pygame.Color('black'))
+    #     intro_rect = string_rendered.get_rect()
+    #     text_coord += 10
+    #     intro_rect.top = text_coord
+    #     intro_rect.x = 10
+    #     text_coord += intro_rect.height
+    #     screen.blit(string_rendered, intro_rect)
 
     while True:
         for event in pygame.event.get():
@@ -211,3 +238,4 @@ if __name__ == '__main__':
         clock.tick(FPS)
 
     terminate()
+
