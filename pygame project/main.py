@@ -7,7 +7,7 @@ import pygame
 FPS = 50
 WIDTH = 640
 HEIGHT = 480
-START_POSITION = WIDTH // 2, HEIGHT - 50
+START_POSITION = WIDTH // 2, HEIGHT - 20
 OFFSET = 4
 SIZE_BALL = (20, 20)
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -64,14 +64,6 @@ class Board(Sprite):
         self.rect = self.image.get_rect().move(pos_x - self.image.get_width() // 2, pos_y)
         self.pos = [pos_x, pos_y]
 
-    # def move(self):
-    #     # self.pos = (x, y)
-    #     self.rect = self.image.get_rect().move(self.pos)
-
-    # def update(self):
-    #     self.rect = self.rect.move(self.vx, self.vy)
-    #     pass
-
 
 class Ball(pygame.sprite.Sprite):
     def __init__(self, pos_x, pos_y):
@@ -84,9 +76,9 @@ class Ball(pygame.sprite.Sprite):
 
     def update(self):
         self.rect = self.rect.move(self.vx, self.vy)
-        if pygame.sprite.spritecollideany(self, tiles_group):
+        if spr := pygame.sprite.spritecollideany(self, tiles_group):
+            tiles_group.remove(spr)
             self.vy = -self.vy
-
         if pygame.sprite.spritecollideany(self, board_group):
             self.vy = -self.vy
         if pygame.sprite.spritecollideany(self, horizontal_borders):
@@ -148,8 +140,9 @@ Border(5, HEIGHT - 5, WIDTH - 5, HEIGHT - 5)
 Border(5, 5, 5, HEIGHT - 5)
 Border(WIDTH - 5, 5, WIDTH - 5, HEIGHT - 5)
 
-level_map = load_level("map.map")
-print(level_map)
+LEVELS = ["map.map", "map1.map", "map2.map", "map3.map"]
+cnt_level = 0
+level_map = load_level(LEVELS[cnt_level])
 generate_level(level_map)
 
 
@@ -186,21 +179,8 @@ def start_screen():
 
 
 def end_screen():
-    # intro_text = ["Game Over"]
-
     fon = pygame.transform.scale(load_image('end_fon.jpg'), (WIDTH, HEIGHT))
     screen.blit(fon, (0, 0))
-    # font = pygame.font.Font(None, 30)
-    # text_coord = 50
-    # for line in intro_text:
-    #     string_rendered = font.render(line, 1, pygame.Color('black'))
-    #     intro_rect = string_rendered.get_rect()
-    #     text_coord += 10
-    #     intro_rect.top = text_coord
-    #     intro_rect.x = 10
-    #     text_coord += intro_rect.height
-    #     screen.blit(string_rendered, intro_rect)
-
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -246,7 +226,13 @@ if __name__ == '__main__':
             ball_group.update()
         pygame.display.flip()
         clock.tick(FPS)
+        if not tiles_group:
+            ball_group.empty()
+            cnt_level += 1
+            level_map = load_level(LEVELS[cnt_level])
+            generate_level(level_map)
+            ball_true = False
+            ball = Ball(START_POSITION[0], START_POSITION[1])
+            ball_group.draw(screen)
 
     terminate()
-
-
