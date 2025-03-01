@@ -167,14 +167,14 @@ def start_screen():
 
     fon = pygame.transform.scale(load_image('fon.png'), (WIDTH, HEIGHT))
     screen.blit(fon, (0, 0))
-    font = pygame.font.Font(None, 50)
-    text_coord = 300
+    font = pygame.font.Font(None, 100)
+    text_coord = 190
     for line in intro_text:
         string_rendered = font.render(line, 1, pygame.Color('SteelBlue'))
         intro_rect = string_rendered.get_rect()
         text_coord += 10
         intro_rect.top = text_coord
-        intro_rect.x = 220
+        intro_rect.x = 130
         text_coord += intro_rect.height
         screen.blit(string_rendered, intro_rect)
 
