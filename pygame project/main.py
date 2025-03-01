@@ -1,12 +1,15 @@
 import os
+import random
 import sys
-import QT
 
 import pygame
 
-FPS = 10
+FPS = 50
 WIDTH = 640
 HEIGHT = 480
+START_POSITION = WIDTH // 2, HEIGHT - 50
+OFFSET = 4
+SIZE_BALL = 10
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 
@@ -14,8 +17,12 @@ pygame.init()
 
 player = None
 all_sprites = pygame.sprite.Group()
+board_group = pygame.sprite.Group()
 tiles_group = pygame.sprite.Group()
-player_group = pygame.sprite.Group()
+ball_group = pygame.sprite.Group()
+
+horizontal_borders = pygame.sprite.Group()
+vertical_borders = pygame.sprite.Group()
 
 
 class Sprite(pygame.sprite.Sprite):
@@ -28,6 +35,20 @@ class Sprite(pygame.sprite.Sprite):
         pass
 
 
+class Border(Sprite):
+    # строго вертикальный или строго горизонтальный отрезок
+    def __init__(self, x1, y1, x2, y2):
+        super().__init__(all_sprites)
+        if x1 == x2:  # вертикальная стенка
+            self.add(vertical_borders)
+            self.image = pygame.Surface([1, y2 - y1])
+            self.rect = pygame.Rect(x1, y1, 1, y2 - y1)
+        else:  # горизонтальная стенка
+            self.add(horizontal_borders)
+            self.image = pygame.Surface([x2 - x1, 1])
+            self.rect = pygame.Rect(x1, y1, x2 - x1, 1)
+
+
 class Tile(Sprite):
     def __init__(self, tile_type, pos_x, pos_y):
         super().__init__(tiles_group)
@@ -37,20 +58,44 @@ class Tile(Sprite):
 
 class Board(Sprite):
     def __init__(self, pos_x, pos_y):
-        super().__init__(player_group)
+        super().__init__(board_group)
         self.image = board_image
-        self.rect = self.image.get_rect().move(board_width * pos_x + 15, board_height * pos_y + 5)
-        self.pos = (pos_x, pos_y)
+        self.rect = self.image.get_rect().move(pos_x - self.image.get_width() // 2, pos_y)
+        self.pos = [pos_x, pos_y]
+        print(self.pos)
 
-    def move(self, x, y):
-        self.pos = (x, y)
-        self.rect = self.image.get_rect().move(board_width * self.pos[0] + 15, board_height * self.pos[1] + 5)
+    # def move(self):
+    #     # self.pos = (x, y)
+    #     self.rect = self.image.get_rect().move(self.pos)
+
+    # def update(self):
+    #     self.rect = self.rect.move(self.vx, self.vy)
+    #     pass
+
+
+class Ball(pygame.sprite.Sprite):
+    def __init__(self, radius, x, y):
+        super().__init__(board_group)
+        self.radius = radius
+        self.image = pygame.Surface((2 * radius, 2 * radius), pygame.SRCALPHA, 32)
+        pygame.draw.circle(self.image, pygame.Color("red"), (radius, radius), radius)
+        self.rect = self.image.get_rect().move(x - self.image.get_width() // 2, y - board.image.get_height() + 2)
+        # self.rect = pygame.Rect(x, y, 2 * radius, 2 * radius)
+        self.vx = random.randint(-5, 5)
+        self.vy = random.randrange(-5, 5)
+
+    def update(self):
+        self.rect = self.rect.move(self.vx, self.vy)
+        if pygame.sprite.spritecollideany(self, horizontal_borders):
+            self.vy = -self.vy
+        if pygame.sprite.spritecollideany(self, vertical_borders):
+            self.vx = -self.vx
 
 
 def load_image(name, color_key=None):
     fullname = os.path.join('data', name)
     try:
-        image = pygame.image.load(fullname).convert()
+        image = pygame.image.load(fullname)
     except pygame.error as message:
         print('Cannot load image:', name)
         raise SystemExit(message)
@@ -64,15 +109,31 @@ def load_image(name, color_key=None):
     return image
 
 
+def load_level(filename):
+    filename = "data/" + filename
+    # читаем уровень, убирая символы перевода строки
+    with open(filename, 'r') as mapFile:
+        level_map = [line.strip() for line in mapFile]
+
+    # и подсчитываем максимальную длину
+    max_width = max(map(len, level_map))
+
+    # дополняем каждую строку пустыми клетками ('.')
+    return list(map(lambda x: x.ljust(max_width, '.'), level_map))
+
+
 # tile_images = {'wall': load_image('box.png'), 'empty': load_image('grass.png')}
 
 board_image = load_image('board1.png')
 
 board_width = board_image.get_width()
 board_height = board_image.get_height()
-
-
-# tile_width = tile_height = 50
+board = Board(START_POSITION[0], START_POSITION[1])
+ball = Ball(SIZE_BALL, START_POSITION[0], START_POSITION[1])
+Border(0, 0, WIDTH - 1, 0)  # верхняя
+Border(0, 0,0, HEIGHT - 1)  # левая
+Border(WIDTH - 1, 0, WIDTH - 1, HEIGHT - 1)  # правая
+Border(0, HEIGHT - 1, WIDTH - 1, HEIGHT - 1)  # нажняя
 
 
 def terminate():
@@ -110,28 +171,44 @@ def start_screen():
     self.terminate()
 
 
-def main():
+if __name__ == '__main__':
+    start_screen()
+    # main()
     # pygame.init()
-    w, h = 600, 300
-    screen = pygame.display.set_mode((w, h))
-    pygame.display.set_caption('Игра «Жизнь»')
-    clock = pygame.time.Clock()
+    # w, h = 600, 300
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption('Игра')
+    # clock = pygame.time.Clock()
     # all_sprites = pygame.sprite.Group(Car('img.png', w))
-    screen.fill((255, 255, 255))
+    # level_map = load_level("map.map")
+    # screen.fill((255, 255, 255))
     running = True
+    ball_true = False
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    ball_true = True
+                    print(ball_true)
+        if pygame.key.get_pressed()[pygame.K_RIGHT]:
+            if board.rect.x + OFFSET + board_width <= WIDTH:
+                board.rect.x += OFFSET
+        if pygame.key.get_pressed()[pygame.K_LEFT]:
+            if board.rect.x - OFFSET >= 0:
+                board.rect.x -= OFFSET
+
+        screen.fill(pygame.Color("black"))
 
         # all_sprites.update()
-        all_sprites.draw(screen)
+        # all_sprites.draw(screen)
+        # all_sprites.update()
+        board_group.draw(screen)
+        if ball_true:
+            ball_group.update()
+            print('werwe')
         pygame.display.flip()
-        clock.tick(60)
+        clock.tick(FPS)
 
-    pygame.quit()
-
-
-if __name__ == '__main__':
-    start_screen()
-    main()
+    terminate()
