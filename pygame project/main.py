@@ -4,7 +4,7 @@ import sys
 
 import pygame
 
-FPS = 60
+FPS = 50
 WIDTH = 640
 HEIGHT = 480
 START_POSITION = WIDTH // 2, HEIGHT - 50
@@ -53,8 +53,8 @@ class Border(Sprite):
 class Tile(Sprite):
     def __init__(self, tile_type, pos_x, pos_y):
         super().__init__(tiles_group)
-        # self.image = tile_images[tile_type]
-        # self.rect = self.image.get_rect().move(tile_width * pos_x, tile_height * pos_y)
+        self.image = tile_images[tile_type]
+        self.rect = self.image.get_rect().move(self.image.get_width() * pos_x, self.image.get_height() * pos_y)
 
 
 class Board(Sprite):
@@ -63,7 +63,6 @@ class Board(Sprite):
         self.image = board_image
         self.rect = self.image.get_rect().move(pos_x - self.image.get_width() // 2, pos_y)
         self.pos = [pos_x, pos_y]
-        print(self.pos)
 
     # def move(self):
     #     # self.pos = (x, y)
@@ -80,12 +79,14 @@ class Ball(pygame.sprite.Sprite):
         self.image = ball_image
         self.rect = self.image.get_rect().move(pos_x - self.image.get_width() // 2, pos_y - SIZE_BALL[0])
         self.pos = [pos_x, pos_y]
-        print(self.pos)
         self.vx = random.randint(-5, 5)
         self.vy = random.randrange(-5, -1)
 
     def update(self):
         self.rect = self.rect.move(self.vx, self.vy)
+        if pygame.sprite.spritecollideany(self, tiles_group):
+            self.vy = -self.vy
+
         if pygame.sprite.spritecollideany(self, board_group):
             self.vy = -self.vy
         if pygame.sprite.spritecollideany(self, horizontal_borders):
@@ -95,6 +96,15 @@ class Ball(pygame.sprite.Sprite):
                 self.vy = -self.vy
         if pygame.sprite.spritecollideany(self, vertical_borders):
             self.vx = -self.vx
+
+
+def generate_level(level):
+    for y in range(len(level)):
+        for x in range(len(level[y])):
+            if level[y][x] == '1':
+                Tile('brick1', x, y)
+            elif level[y][x] == '2':
+                Tile('brick2', x, y)
 
 
 def load_image(name, color_key=None):
@@ -119,15 +129,10 @@ def load_level(filename):
     # читаем уровень, убирая символы перевода строки
     with open(filename, 'r') as mapFile:
         level_map = [line.strip() for line in mapFile]
-
-    # и подсчитываем максимальную длину
-    max_width = max(map(len, level_map))
-
-    # дополняем каждую строку пустыми клетками ('.')
-    return list(map(lambda x: x.ljust(max_width, '.'), level_map))
+    return list(level_map)
 
 
-# tile_images = {'wall': load_image('box.png'), 'empty': load_image('grass.png')}
+tile_images = {'brick1': load_image('brick1.png'), 'brick2': load_image('brick2.png')}
 
 board_image = load_image('board1.png')
 board_width = board_image.get_width()
@@ -142,6 +147,10 @@ Border(5, 5, WIDTH - 5, 5)
 Border(5, HEIGHT - 5, WIDTH - 5, HEIGHT - 5)
 Border(5, 5, 5, HEIGHT - 5)
 Border(WIDTH - 5, 5, WIDTH - 5, HEIGHT - 5)
+
+level_map = load_level("map.map")
+print(level_map)
+generate_level(level_map)
 
 
 def terminate():
@@ -177,7 +186,7 @@ def start_screen():
 
 
 def end_screen():
-    intro_text = ["Game Over"]
+    # intro_text = ["Game Over"]
 
     fon = pygame.transform.scale(load_image('end_fon.jpg'), (WIDTH, HEIGHT))
     screen.blit(fon, (0, 0))
@@ -231,6 +240,7 @@ if __name__ == '__main__':
         border_group.draw(screen)
         board_group.draw(screen)
         ball_group.draw(screen)
+        tiles_group.draw(screen)
 
         if ball_true:
             ball_group.update()
@@ -238,4 +248,5 @@ if __name__ == '__main__':
         clock.tick(FPS)
 
     terminate()
+
 
